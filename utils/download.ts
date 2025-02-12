@@ -1,10 +1,16 @@
 import { runCommandsInParallel } from "./parallel.ts";
 import videos from "../yt_videos.json" with { type: "json" };
+import { CONFIG } from "config.ts";
 
 export async function downloadList() {
-  const commands = Object.entries(videos).flatMap(([_, ids]) =>
+  const { DOWNLOAD_PATH } = CONFIG;
+
+  const commands = Object.entries(
+    videos as Record<string, Array<string>>,
+  ).flatMap(([_, ids]) =>
     ids.map(
-      (id) => `yt-dlp -P ./videos/ https://www.youtube.com/watch?v=${id}`,
+      (id) =>
+        `yt-dlp -P ${DOWNLOAD_PATH} https://www.youtube.com/watch?v=${id}`,
     ),
   );
 
