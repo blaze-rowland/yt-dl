@@ -2,3 +2,4 @@
 - Update `config.ts`
   - `CHANNELS` is an array of channel names (from url) e.g. [Insider, Fireship]
   - `MAX_VIDEOS_PER_CHANNEL` is a number of videos you'd like to download
+  - `DOWNLOAD_PATH` is the directory in which you want the videos to download
