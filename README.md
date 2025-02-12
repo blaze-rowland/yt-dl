@@ -1,4 +1,4 @@
 - Requires [yt-dlp](https://github.com/yt-dlp/yt-dlp) to function `brew install yt-dlp`
 - Update `config.ts`
-  - CHANNELS is an array of channel names (from url) e.g. [Insider, Fireship]
-  - MAX_VIDEOS_PER_CHANNEL is a number of videos you'd like to download
+  - `CHANNELS` is an array of channel names (from url) e.g. [Insider, Fireship]
+  - `MAX_VIDEOS_PER_CHANNEL` is a number of videos you'd like to download
