@@ -1,5 +1,7 @@
 - Requires [yt-dlp](https://github.com/yt-dlp/yt-dlp) to function `brew install yt-dlp`
+- Run `npm run pre` to create base `config.ts` and `yt_videos.json`
 - Update `config.ts`
   - `CHANNELS` is an array of channel names (from url) e.g. [Insider, Fireship]
   - `MAX_VIDEOS_PER_CHANNEL` is a number of videos you'd like to download
   - `DOWNLOAD_PATH` is the directory in which you want the videos to download
+  - `OUTPUT_PATH` with some drive types w/o extensive knowledge downloading directly to external drives can be tricky. This will serve as the actual output after download

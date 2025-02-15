@@ -1,6 +1,6 @@
 import { runCommandsInParallel } from "./parallel.ts";
 import videos from "../yt_videos.json" with { type: "json" };
-import { CONFIG } from "config.ts";
+import { CONFIG } from "../config.ts";
 
 export async function downloadList() {
   const { DOWNLOAD_PATH } = CONFIG;
@@ -10,7 +10,7 @@ export async function downloadList() {
   ).flatMap(([_, ids]) =>
     ids.map(
       (id) =>
-        `yt-dlp -P ${DOWNLOAD_PATH} https://www.youtube.com/watch?v=${id}`,
+      `yt-dlp -P ${DOWNLOAD_PATH} --restrict-filenames  -o "%(title)s [%(id)s].%(ext)s" --write-thumbnail --write-info-json --write-description --write-sub --embed-thumbnail --embed-metadata --merge-output-format mp4 "https://www.youtube.com/watch?v=${id}"`,
     ),
   );
 

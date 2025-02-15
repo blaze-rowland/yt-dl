@@ -5,7 +5,8 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "start": "npx ts-node index.ts"
+    "start": "npx ts-node index.ts",
+    "pre": "cat config.example.ts >> config.ts && echo {} >> yt_videos.json"
   },
   "keywords": [],
   "author": "",
@@ -13,9 +14,11 @@
   "devDependencies": {
     "@playwright/test": "^1.50.1",
     "@types/node": "^22.13.1",
+    "@types/yargs": "^17.0.33",
     "ts-node": "^10.9.2"
   },
   "dependencies": {
-    "playwright": "^1.50.1"
+    "playwright": "^1.50.1",
+    "yargs": "^17.7.2"
   }
 }
